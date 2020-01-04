@@ -2,9 +2,9 @@
 
 namespace Example\FactoryMethod;
 
-class Factory
+abstract class Factory
 {
-	private $product;
+	protected $product;
 	
 	public function __construct(string $product)
 	{
@@ -13,7 +13,7 @@ class Factory
 	
 	public function create()
 	{
-		$productClassName = __NAMESPACE__ . '\\' . ucfirst(strtolower($this->product));
+		$productClassName = static::getNameSpace() . '\\' . ucfirst(strtolower($this->product));
 		
 		if (!class_exists($productClassName)) {
 			throw new \Exception('Class ' . $productClassName . ' not exists!');
@@ -22,19 +22,3 @@ class Factory
 		}
 	}
 }
-
-// class TableFactory extends Factory
-// {
-	// public function create()
-	// {
-		// return new Table();
-	// }
-// }
-
-// class ChairFactory extends Factory
-// {
-	// public function create()
-	// {
-		// return new Chair();
-	// }
-// }
