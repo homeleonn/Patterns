@@ -1,5 +1,5 @@
 <?php
-require '../../functions.php';
+require 'functions.php';
 $start = microtime(true);
 // require 'facade.php';
 // require 'factoryMethod.php';
