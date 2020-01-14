@@ -2,9 +2,8 @@
 
 namespace Example\AbstractFactory;
 
-use \Example\FactoryMethod\Furniture;
-use \Example\FactoryMethod\Furniture\FurnitureFactory;
-use \Example\FactoryMethod\Electronics\ElectronicsFactory;
+use \Example\FactoryMethod\Furniture\{Furniture, FurnitureFactory};
+use \Example\FactoryMethod\Electronics\{Electronics, ElectronicsFactory};
 
 class House
 {
@@ -12,12 +11,12 @@ class House
 	private $electronics = [];
 	private $factories   = [];
 	
-	public function createFurniture($product)
+	public function createFurniture($product): Furniture
 	{
 		return $this->create('furniture', $product);
 	}
 	
-	public function createElectronics($product)
+	public function createElectronics($product): Electronics
 	{
 		return $this->create('electronics', $product);
 	}
