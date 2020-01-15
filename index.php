@@ -5,4 +5,4 @@ $start = microtime(true);
 // require 'factoryMethod.php';
 // require 'abstractFactory.php';
 // require 'composite.php';
-
+require 'decorator.php';

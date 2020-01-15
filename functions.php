@@ -5,6 +5,15 @@ ini_set('xdebug.var_display_max_data', 1024);
 ini_set('date.timezone', 'Europe/Kiev');
 ini_set('xdebug.overload_var_dump', '1');
 
+//cachegrind
+// ini_set('xdebug.profiler_enable', '0');
+// ini_set('xdebug.extended_info', '0');
+// ini_set('xdebug.remote_enable', '0');
+// ini_set('xdebug.auto_trace', '0');
+// ini_set('xdebug.profiler_output_dir', 'C:\Program Files\VertrigoServ\www\test\webgrindresults');
+// ini_set('xdebug.profiler_output_name', 'cachegrind.out.crc32');
+// ini_set('xdebug.profiler_enable_trigger', '1');
+
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 
 spl_autoload_register(function($className){
