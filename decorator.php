@@ -47,6 +47,7 @@ d($tile->getWealthFactor());
 abstract class TileDecorator extends Tile
 {
 	protected $tile;
+	protected $wealthFactor = 2;
 	
 	public function __construct(Tile $tile)
 	{
@@ -57,19 +58,19 @@ abstract class TileDecorator extends Tile
 class DiamondDecorator extends TileDecorator
 {
 	use TConcretteDecorator;
-	private $wealthFactor = 2;
+	protected $wealthFactor = 2;
 }
 
 class PollutionDecorator extends TileDecorator
 {
 	use TConcretteDecorator;
-	private $wealthFactor = -4;
+	protected $wealthFactor = -4;
 }
 
 class GoldDecorator extends TileDecorator
 {
 	use TConcretteDecorator;
-	private $wealthFactor = 5;
+	protected $wealthFactor = 5;
 }
 
 trait TConcretteDecorator
