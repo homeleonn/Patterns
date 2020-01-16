@@ -5,7 +5,7 @@ class Context
 	private $sortStrategy;
 	public $arr = [2, 6, 1, 5, 7, 11];
 	
-	public function setSortStrategy(ISort $sortStrategy): void
+	public function setSortStrategy(ISortable $sortStrategy): void
 	{
 		$this->sortStrategy = $sortStrategy;
 		d(get_class($this->sortStrategy));
@@ -21,12 +21,12 @@ class Context
 	}
 }
 
-interface ISort
+interface ISortable
 {
 	public function sort(array $arr): array;
 }
 
-class sortBubbles implements ISort
+class sortBubbles implements ISortable
 {
 	public function sort(array $arr): array
 	{
@@ -44,7 +44,7 @@ class sortBubbles implements ISort
 	}
 }
 
-class sortSelection implements ISort
+class sortSelection implements ISortable
 {
 	public function sort(array $arr): array
 	{

@@ -7,3 +7,4 @@ $start = microtime(true);
 // require 'composite.php';
 // require 'decorator.php';
 // require 'strategy.php';
+// require 'prototype.php';
