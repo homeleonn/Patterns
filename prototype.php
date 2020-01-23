@@ -71,8 +71,7 @@ class Interpreter
 				return (int)$item;
 			}, $expr);
 			return new A($expr);
-		} 
-		
+		}
 		// string
 		else {
 			return $expr;

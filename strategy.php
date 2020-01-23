@@ -10,7 +10,11 @@ class Context
 		$this->sortStrategy = $sortStrategy;
 		d(get_class($this->sortStrategy));
 	}
-	
+
+	/**
+	 * @return array
+	 * @throws Exception
+	 */
 	public function sort(): array
 	{
 		if (!$this->sortStrategy) {
@@ -68,11 +72,35 @@ class sortSelection implements ISortable
 	}
 }
 
+class Mysort implements ISortable
+{
+    public function sort(array $arr): array
+    {
+        return [];
+    }
+}
+
 $context = new Context();
 $context->setSortStrategy(new sortSelection());
-d($context->sort());
+try {
+	d($context->sort());
+} catch (Exception $e) {
+}
 
 d($context->arr);
 
 $context->setSortStrategy(new sortBubbles());
-d($context->sort());
+try {
+	d($context->sort());
+} catch (Exception $e) {
+}
+
+$context->setSortStrategy(new Mysort());
+try {
+	d($context->sort());
+} catch (Exception $e) {
+}
+
+$data = [
+	'title' => 'Strategy',
+];
